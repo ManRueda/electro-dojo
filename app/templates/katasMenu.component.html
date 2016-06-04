@@ -1,0 +1,10 @@
+<ul class="kata-list">
+    <li
+      *ngFor="let kata of katas; let odd = odd; let even = even"
+      class="kata"
+      [ngClass]="{odd: odd, even: even}"
+      (click)="openKata(kata)"
+      >
+        <span data-id="{{kata.id}}">{{kata.name}} - {{kata.current}}</span>
+    </li>
+</ul>

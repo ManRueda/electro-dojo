@@ -1,0 +1,12 @@
+<katas-menu [katas]="katas"></katas-menu>
+<div class="content">
+    <div *ngIf="!!currentKata">
+      <h1>{{currentKata.name}}</h1>
+      <code-editor></code-editor>
+    </div>
+    <div class="notes">
+      <button (click)="addKata()" >adddd</button>
+    </div>
+    <div class="dummy-notes">
+    </div>
+</div>

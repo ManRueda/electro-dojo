@@ -1,0 +1,28 @@
+:host > .content {
+    position: absolute;
+    left: 200px;
+    right: 0;
+    padding: 2px 4px;
+    bottom: 0;
+    top: 0;
+}
+:host > .content .notes {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    right: 0;
+    left: 0;
+    padding-left: 8px;
+    box-shadow: 0 1px 10px #16191D;
+    background-color: #1F2228;
+    z-index: 9;
+}
+:host > .content .dummy-notes {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
+    left: 0;
+    width: 8px;
+    background-color: #1F2228;
+    z-index: 11;
+}

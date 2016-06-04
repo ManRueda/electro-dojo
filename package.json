@@ -1,28 +1,53 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
+  "name": "electro-dojo",
+  "version": "0.0.1",
+  "description": "Electron based Coding Dojo tool",
   "scripts": {
-    "start": "electron main.js"
+    "postinstall": "install-app-deps && tsd install",
+    "all": "npm install && npm run compile && electron ./app/out/boot.js",
+    "start": "electron ./app/out/boot.js",
+    "clean": "rimraf dist",
+    "clean:osx": "rimraf dist/electro-dojo-darwin-x64",
+    "clean:win": "rimraf dist/win",
+    "compile": "rimraf app/out && tsconfig -i 2 && tsc",
+    "pack": "npm run compile && build",
+    "dist": "npm run compile && build",
+    "release": "npm run compile && build",
+    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
+    "url": "git+https://github.com/manrueda/electro-dojo.git"
   },
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "dojo",
+    "coding",
+    "code",
+    "electron",
+    "node"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Manuel Rueda <manuel.rueda.un@gmail.com>",
+  "private": true,
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
+    "url": "https://github.com/manrueda/electro-dojo/issues"
   },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "homepage": "https://github.com/manrueda/electro-dojo#readme",
+  "postinstall": "install-app-deps",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+    "devtron": "^1.1.2",
+    "electron-builder": "^3.25.0",
+    "electron-packager": "^7.0.3",
+    "electron-prebuilt": "^1.2.0",
+    "rimraf": "^2.5.2",
+    "tsconfig-glob": "^0.4.3",
+    "typescript": "^1.8.10",
+    "electron-debug": "^1.0.0",
+    "electron-reload": "^1.0.0"
+  },
+  "build": {
+    "app-bundle-id": "ar.com.manrueda.code-dojo",
+    "app-category-type": "public.app-category.other",
+    "compression": "store"
   }
 }

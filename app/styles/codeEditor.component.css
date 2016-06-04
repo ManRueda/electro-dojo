@@ -1,0 +1,28 @@
+:host {
+    position: absolute;
+    bottom: 150px;
+    top: 75px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+}
+:host .editor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+:host .editor.ace-monokai {
+    font-size: 1rem;
+}
+:host .editor.ace-monokai, .ace_gutter {
+    background-color: transparent;
+}
+:host .editor.ace-monokai .ace_marker-layer .ace_selection {
+    background-color: #353942;
+}
+:host .editor.ace-monokai .ace_gutter-active-line, .ace_marker-layer .ace_active-line {
+    background-color: #353942;
+}

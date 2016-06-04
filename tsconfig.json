@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "removeComments": false,
+    "outDir": "app/out",
+    "noEmitOnError": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "filesGlob": [
+    "typings/**/*.d.ts",
+    "!typings/tsd.d.ts",
+    "app/**/*.ts",
+    "!app/node_modules/**"
+  ],
+  "files": [
+    "typings/github-electron/github-electron.d.ts",
+    "typings/node/node.d.ts",
+    "app/app.ts",
+    "app/boot.ts",
+    "app/components/codeEditor.component.ts",
+    "app/components/home.component.ts",
+    "app/components/katasMenu.component.ts",
+    "app/components/main.component.ts",
+    "app/redux/KataActions.ts",
+    "app/redux/KataReducer.ts",
+    "app/renderer.ts"
+  ],
+  "buildOnSave": false,
+  "compileOnSave": true,
+  "atom": {
+    "formatOnSave": true,
+    "rewriteTsconfig": true
+  }
+}
