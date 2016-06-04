@@ -4,4 +4,5 @@ npm-debug.log
 app/out
 typings
 .DS_Store
+app/styles/*.css
 app/styles/**.css
