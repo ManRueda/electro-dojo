@@ -36,7 +36,7 @@
   "postinstall": "install-app-deps",
   "devDependencies": {
     "devtron": "^1.1.2",
-    "electron-builder": "^3.25.0",
+    "electron-builder": "^4.2.2",
     "electron-debug": "^1.0.0",
     "electron-packager": "^7.0.3",
     "electron-prebuilt": "^1.2.0",
