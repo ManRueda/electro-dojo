@@ -13,7 +13,8 @@
     "pack": "npm run compile && build",
     "dist": "npm run compile && build",
     "release": "npm run compile && build",
-    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64"
+    "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64",
+    "less": "./tools/compile-less.sh"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "electron-packager": "^7.0.3",
     "electron-prebuilt": "^1.2.0",
     "electron-reload": "^1.0.0",
+    "less": "^2.7.1",
     "rimraf": "^2.5.2",
     "tsconfig-glob": "^0.4.3",
     "typescript": "^1.8.10",
