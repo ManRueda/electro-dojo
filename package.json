@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Electron based Coding Dojo tool",
   "scripts": {
-    "postinstall": "install-app-deps && tsd install",
+    "postinstall": "install-app-deps && typings install",
     "all": "npm install && npm run compile && electron ./app/out/boot.js",
     "start": "electron ./app/out/boot.js",
     "clean": "rimraf dist",
@@ -37,13 +37,14 @@
   "devDependencies": {
     "devtron": "^1.1.2",
     "electron-builder": "^3.25.0",
+    "electron-debug": "^1.0.0",
     "electron-packager": "^7.0.3",
     "electron-prebuilt": "^1.2.0",
+    "electron-reload": "^1.0.0",
     "rimraf": "^2.5.2",
     "tsconfig-glob": "^0.4.3",
     "typescript": "^1.8.10",
-    "electron-debug": "^1.0.0",
-    "electron-reload": "^1.0.0"
+    "typings": "^1.0.4"
   },
   "build": {
     "app-bundle-id": "ar.com.manrueda.code-dojo",
