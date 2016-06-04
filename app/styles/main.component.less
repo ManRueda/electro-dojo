@@ -1,0 +1,32 @@
+
+:host {
+    & > .content{
+        position: absolute;
+        left: 200px;
+        right: 0;
+        padding: 2px 4px;
+        bottom: 0;
+        top: 0;
+
+        .notes{
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            right: 0;
+            left: 0;
+            padding-left: 8px;
+            box-shadow: 0px 1px 10px #16191D; //@common-shadows;
+            background-color: #1F2228; //@common-left-menu-black
+            z-index: 9;
+        }
+        .dummy-notes{
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            left: 0;
+            width: 8px;
+            background-color: #1F2228; //@common-left-menu-black;
+            z-index: 11;
+        }
+    }
+}

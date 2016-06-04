@@ -1,0 +1,32 @@
+
+:host {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 200px;
+    background-color: #1F2228; //@common-left-menu-black;
+    box-shadow: 1px 1px 10px #16191D; //@common-shadows;
+    z-index: 10;
+    overflow: auto;
+
+    .kata-list {
+        padding: 0;
+        margin: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        position: absolute;
+
+        .kata{
+            list-style: none;
+            padding: 2px 12px;
+            font-size: 0.9rem;
+            line-height: 22px;
+
+            &:hover{
+                background-color: #31343C; //@common-back-hover;
+                cursor: pointer;
+            }
+        }
+    }
+}
