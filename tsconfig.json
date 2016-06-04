@@ -13,13 +13,17 @@
   },
   "filesGlob": [
     "typings/**/*.d.ts",
-    "!typings/tsd.d.ts",
+    "!typings/index.d.ts",
     "app/**/*.ts",
     "!app/node_modules/**"
   ],
   "files": [
-    "typings/github-electron/github-electron.d.ts",
-    "typings/node/node.d.ts",
+    "typings/globals/electron/index.d.ts",
+    "typings/globals/jasmine/index.d.ts",
+    "typings/globals/node/index.d.ts",
+    "typings/globals/peerjs/index.d.ts",
+    "typings/globals/webrtc/mediastream/index.d.ts",
+    "typings/globals/webrtc/rtcpeerconnection/index.d.ts",
     "app/app.ts",
     "app/boot.ts",
     "app/components/codeEditor.component.ts",

@@ -8,7 +8,7 @@ if (isDevelopment) {
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow: GitHubElectron.BrowserWindow = null;
+let mainWindow: Electron.BrowserWindow = null;
 
 function createWindow() {
     // Create the browser window.
