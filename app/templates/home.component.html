@@ -1,18 +1,20 @@
-<div class="container noselect main" *ngIf="modeCreate === false && modeJoin === false">
-  <span class="btn create" (click)="create()">Create room</span>
-  <span class="btn join" (click)="join()">Join room</span>
-</div>
-
-<div class="container noselect create" *ngIf="modeCreate">
-  <div>
-    <span>Name</span>
-    <input type="text">
+<div class="noselect">
+  <div class="container main" *ngIf="modeCreate === false && modeJoin === false">
+    <span class="btn create" (click)="create()">Create room</span>
+    <span class="btn join" (click)="join()">Join room</span>
   </div>
-  <span class="btn create">Create</span>
 
-</div>
+  <div class="container create" *ngIf="modeCreate">
+    <div>
+      <span>Name</span>
+      <input type="text">
+    </div>
+    <span class="btn create">Create</span>
 
-<div class="container noselect join" *ngIf="modeJoin">
-  <span class="btn create" (click)="create()">Create room</span>
-  <span class="btn join" (click)="join()">Join room</span>
+  </div>
+
+  <div class="container join" *ngIf="modeJoin">
+    <span class="btn create" (click)="create()">Create room</span>
+    <span class="btn join" (click)="join()">Join room</span>
+  </div>
 </div>
