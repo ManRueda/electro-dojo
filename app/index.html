@@ -10,14 +10,14 @@
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
-    <script src="node_modules/peerjs/dist/peer.js"></script>
+    <!--<script src="node_modules/ace-builds/src-noconflict/ace.js"></script>-->
 
   </head>
   <body>
       <my-app>Loading...</my-app>
 
       <script>
+        require('./node_modules/peerjs/dist/peer.js')
         require('./out/app')
       </script>
   </body>
