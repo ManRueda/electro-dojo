@@ -1,8 +1,10 @@
 import { app, ipcMain, BrowserWindow } from 'electron';
+const path = require('path');
 const isDevelopment = require('electron-is-dev');
 
 if (isDevelopment) {
-    require('electron-reload')(__dirname);
+    let rootPath = path.resolve(__dirname, '..');
+    require('electron-reload')([rootPath + '/**/*.less', rootPath + '/**/*.js', rootPath + '/**/*.html']);
 }
 
 
