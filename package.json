@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "clean:osx": "rimraf dist/electro-dojo-darwin-x64",
     "clean:win": "rimraf dist/win",
-    "compile": "rimraf app/out && tsconfig -i 2 && tsc && less",
+    "compile": "rimraf app/out && tsconfig -i 2 && tsc && npm run less",
     "pack": "npm run compile && build",
     "dist": "npm run compile && build",
     "release": "npm run compile && build",

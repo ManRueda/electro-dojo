@@ -1,5 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Component, provide, OnInit, enableProdMode } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes, Router } from '@angular/router';
 import { createStore } from 'redux';
@@ -45,5 +46,6 @@ bootstrap(AppComponent, [
     provide('KataStore', { useValue: kataStore }),
     KataActions,
     ROUTER_PROVIDERS,
+    provide(APP_BASE_HREF, { useValue: window.location.href.substring(0, window.location.href.indexOf('index.html')) }),
     provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);
