@@ -26,6 +26,7 @@
     "typings/globals/webrtc/rtcpeerconnection/index.d.ts",
     "app/app.ts",
     "app/boot.ts",
+    "app/components/btn-home.component.ts",
     "app/components/codeEditor.component.ts",
     "app/components/home.component.ts",
     "app/components/katasMenu.component.ts",
