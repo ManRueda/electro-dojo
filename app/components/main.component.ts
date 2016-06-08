@@ -10,8 +10,8 @@ import { CodeEditorComponent } from './codeEditor.component';
 
 @Component({
     selector: 'main',
-    templateUrl: 'src/templates/main.component.html',
-    styleUrls: ['src/styles/main.component.css'],
+    templateUrl: 'templates/main.component.html',
+    styleUrls: ['styles/main.component.css'],
     directives: [ROUTER_DIRECTIVES, CodeEditorComponent, KatasMenu],
     providers: [ROUTER_PROVIDERS]
 })

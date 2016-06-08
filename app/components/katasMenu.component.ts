@@ -7,8 +7,8 @@ import { KataActions, IKata } from '../redux/KataActions';
 
 @Component({
     selector: 'katas-menu',
-    templateUrl: 'src/templates/katasMenu.component.html',
-    styleUrls: ['src/styles/katasMenu.component.css'],
+    templateUrl: 'templates/katasMenu.component.html',
+    styleUrls: ['styles/katasMenu.component.css'],
     directives: [NgClass]
 })
 export class KatasMenu {
