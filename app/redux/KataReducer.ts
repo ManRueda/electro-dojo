@@ -25,6 +25,11 @@ export function kataReducer(state = initialState, action: IKataAction): IKatasSt
                     return k;
                 })
             };
+        case KataActionType.AddCode:
+        case KataActionType.SetCode:
+            let kata = state.katas.filter(k => k.id === action.id)[0];
+            kata.code = action.code;
+            return state;
         default:
             return state;
     }

@@ -1,12 +1,21 @@
 export enum KataActionType {
     Add,
-    SetCurrent
+    SetCurrent,
+    AddCode,
+    SetCode
 }
 
 export interface IKata {
     name: string;
     current: boolean;
+    note?: string;
+    code?: IKataCode;
     id: number;
+}
+
+export interface IKataCode {
+    language: string;
+    code: string;
 }
 
 export interface IKataAction extends IKata {
@@ -36,4 +45,37 @@ export class KataActions {
             name: kata.name
         };
     }
+
+    setCode(kata: IKata, code: string): IKataAction {
+        if (kata.code === undefined) {
+            let earlyExist = <IKataAction>kata
+            earlyExist.type = KataActionType.SetCode;
+            return earlyExist;
+        }
+        return {
+            type: KataActionType.SetCode,
+            id: kata.id,
+            current: kata.current,
+            name: kata.name,
+            code: {
+                code: code,
+                language: kata.code.language
+            }
+        };
+    }
+
+    addCode(kata: IKata, language: string, code: string): IKataAction {
+        return {
+            type: KataActionType.AddCode,
+            id: kata.id,
+            current: kata.current,
+            name: kata.name,
+            code: {
+                code: code,
+                language: language
+            }
+        };
+    }
+
+
 }
