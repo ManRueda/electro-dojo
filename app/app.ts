@@ -6,8 +6,8 @@ import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes, Router } from '@angular/ro
 import { createStore } from 'redux';
 const isDevelopment = require('electron-is-dev');
 
-import { MainComponent } from './components/main.component';
-import { HomeComponent } from './components/home.component';
+import { MainComponent } from './components/main.cmp';
+import { HomeComponent } from './components/home.cmp';
 import { kataReducer, KataStore } from './redux/KataReducer';
 import { KataActions } from './redux/KataActions';
 

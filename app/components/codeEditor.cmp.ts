@@ -3,8 +3,8 @@ import { Component, OnInit, Directive, Inject, ElementRef } from '@angular/core'
 
 @Component({
     selector: 'code-editor',
-    templateUrl: 'templates/codeEditor.component.html',
-    styleUrls: ['styles/codeEditor.component.css']
+    templateUrl: 'templates/codeEditor.cmp.html',
+    styleUrls: ['styles/codeEditor.cmp.css']
 })
 export class CodeEditorComponent implements OnInit {
     constructor(

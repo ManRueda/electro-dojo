@@ -1,11 +1,11 @@
 import { Component, Inject, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes } from '@angular/router';
-import { BtnHomeComponent } from './btn-home.component';
+import { BtnHomeComponent } from './btn-home.cmp';
 
 @Component({
     selector: 'home',
-    templateUrl: 'templates/home.component.html',
-    styleUrls: ['styles/home.component.css'],
+    templateUrl: 'templates/home.cmp.html',
+    styleUrls: ['styles/home.cmp.css'],
     directives: [ROUTER_DIRECTIVES, BtnHomeComponent],
     providers: [ROUTER_PROVIDERS]
 })

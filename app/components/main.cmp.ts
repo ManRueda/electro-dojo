@@ -5,13 +5,13 @@ import { Unsubscribe } from 'redux';
 
 import { KataStore } from '../redux/KataReducer';
 import { KataActions, IKata } from '../redux/KataActions';
-import { KatasMenu } from './katasMenu.component';
-import { CodeEditorComponent } from './codeEditor.component';
+import { KatasMenu } from './katasMenu.cmp';
+import { CodeEditorComponent } from './codeEditor.cmp';
 
 @Component({
     selector: 'main',
-    templateUrl: 'templates/main.component.html',
-    styleUrls: ['styles/main.component.css'],
+    templateUrl: 'templates/main.cmp.html',
+    styleUrls: ['styles/main.cmp.css'],
     directives: [ROUTER_DIRECTIVES, CodeEditorComponent, KatasMenu],
     providers: [ROUTER_PROVIDERS]
 })
