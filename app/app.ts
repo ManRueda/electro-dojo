@@ -24,8 +24,8 @@ const kataStore = createStore(kataReducer);
     template: `<router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES]
 })
-@Routes([{ path: 'main', component: MainComponent },
-    { path: 'home', component: HomeComponent }
+@Routes([{ path: '/main', component: MainComponent },
+    { path: '/home', component: HomeComponent }
 ])
 export class AppComponent implements OnInit {
     constructor(public router: Router) {
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
     }
     ngOnInit() {
-        this.router.navigate(['home']);
+        this.router.navigate(['/home']);
     }
 }
 //Use the hash strategy to avoid issues with electron
@@ -41,6 +41,6 @@ bootstrap(AppComponent, [
     provide('KataStore', { useValue: kataStore }),
     KataActions,
     ROUTER_PROVIDERS,
-    provide(APP_BASE_HREF, { useValue: window.location.href.substring(0, window.location.href.indexOf('index.html')) }),
+    provide(APP_BASE_HREF, { useValue: '/' }),
     provide(LocationStrategy, { useClass: HashLocationStrategy })
 ]);
