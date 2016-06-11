@@ -39,6 +39,7 @@
     "app/redux/actions/types.ts",
     "app/redux/dada.ts",
     "app/redux/dojoReducer.ts",
+    "app/redux/kataReducer.ts",
     "app/redux/store.ts",
     "app/renderer.ts"
   ],

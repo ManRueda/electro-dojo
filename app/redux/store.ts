@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, Store } from 'redux'
 import { dojoReducer, IDojo } from './dojoReducer'
 import { kataReducer, IKata } from './kataReducer'
 

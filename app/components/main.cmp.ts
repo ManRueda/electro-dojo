@@ -3,8 +3,9 @@ import { Component, Inject, OnDestroy } from '@angular/core';
 import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes } from '@angular/router';
 import { Unsubscribe } from 'redux';
 
-import { KataStore } from '../redux/KataReducer';
-import { KataActions, IKata } from '../redux/KataActions';
+import { store } from '../redux/store';
+import { IKata } from '../redux/kataReducer';
+import { addKata } from '../redux/actions/kataCreators';
 import { KatasMenu } from './katasMenu.cmp';
 import { CodeEditorComponent } from './codeEditor.cmp';
 
@@ -20,20 +21,18 @@ export class MainComponent implements OnDestroy {
     private katas: Array<IKata>;
     private currentKata: IKata;
 
-    constructor( @Inject('KataStore') private kataStore: KataStore,
-        private kataActions: KataActions) {
+    constructor() {
 
-        this.unsubscribe = this.kataStore.subscribe(() => {
-            let state = this.kataStore.getState();
+        this.unsubscribe = store.subscribe(() => {
+            let state = store.getState();
 
             this.katas = state.katas;
-            this.currentKata = this.katas.filter(k => k.current)[0];
         });
     }
     showEditor: boolean = false;
 
     addKata() {
-        this.kataStore.dispatch(this.kataActions.addKata(Date.now().toString()));
+        store.dispatch(addKata(Date.now().toString()));
     }
 
     ngOnDestroy() {
