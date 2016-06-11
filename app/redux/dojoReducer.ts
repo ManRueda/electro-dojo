@@ -18,7 +18,7 @@ export function dojoReducer(state = initialState, action: IAction): IDojo {
             });
         case DojoActionType.SET_NAME:
             return Object.assign({}, state, {
-                id: (<ISetIdDojoAction>action).id
+                name: (<ISetNameDojoAction>action).name
             });
         default:
             return state;
