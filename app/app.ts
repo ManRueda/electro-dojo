@@ -8,16 +8,12 @@ const isDevelopment = require('electron-is-dev');
 
 import { MainComponent } from './components/main.cmp';
 import { HomeComponent } from './components/home.cmp';
-import { kataReducer, KataStore } from './redux/KataReducer';
-import { KataActions } from './redux/KataActions';
 
 if (isDevelopment) {
     require('devtron').install()
 } else {
     enableProdMode();
 }
-
-const kataStore = createStore(kataReducer);
 
 @Component({
     selector: 'my-app',
@@ -29,8 +25,6 @@ const kataStore = createStore(kataReducer);
 ])
 export class AppComponent implements OnInit {
     constructor(public router: Router) {
-        var dada = new KataActions();
-
     }
     ngOnInit() {
         this.router.navigate(['/home']);
@@ -38,8 +32,8 @@ export class AppComponent implements OnInit {
 }
 //Use the hash strategy to avoid issues with electron
 bootstrap(AppComponent, [
-    provide('KataStore', { useValue: kataStore }),
-    KataActions,
+    //provide('KataStore', { useValue: kataStore }),
+    //KataActions,
     ROUTER_PROVIDERS,
     provide(APP_BASE_HREF, { useValue: '/' }),
     provide(LocationStrategy, { useClass: HashLocationStrategy })
