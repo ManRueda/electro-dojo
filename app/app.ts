@@ -1,13 +1,14 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { Component, provide, OnInit, enableProdMode } from '@angular/core';
+import { Component, provide, OnInit, enableProdMode, OnDestroy } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes, Router } from '@angular/router';
-import { createStore } from 'redux';
+import { createStore, Unsubscribe } from 'redux';
 const isDevelopment = require('electron-is-dev');
 
 import { MainComponent } from './components/main.cmp';
 import { HomeComponent } from './components/home.cmp';
+import { store } from './redux/store';
 
 if (isDevelopment) {
     require('devtron').install()
@@ -23,17 +24,27 @@ if (isDevelopment) {
 @Routes([{ path: '/main', component: MainComponent },
     { path: '/home', component: HomeComponent }
 ])
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+    private unsubscribe: Unsubscribe;
+
     constructor(public router: Router) {
+        this.unsubscribe = store.subscribe(() => {
+            let state = store.getState();
+            if (state.dojo.name){
+                window.document.title = 'Node Dojo - ' + state.dojo.name;
+            }
+        });
     }
     ngOnInit() {
         this.router.navigate(['/home']);
     }
+
+    ngOnDestroy() {
+        this.unsubscribe();
+    }
 }
 //Use the hash strategy to avoid issues with electron
 bootstrap(AppComponent, [
-    //provide('KataStore', { useValue: kataStore }),
-    //KataActions,
     ROUTER_PROVIDERS,
     provide(APP_BASE_HREF, { useValue: '/' }),
     provide(LocationStrategy, { useClass: HashLocationStrategy })

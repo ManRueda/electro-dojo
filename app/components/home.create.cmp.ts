@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { BtnHomeComponent } from './btn-home.cmp';
+import { store } from './../redux/store';
+import { setName } from './../redux/actions/dojoCreators';
 
 @Component({
     selector: 'home-create',
@@ -25,6 +27,6 @@ export class HomeCreateComponen {
     }
 
     create() {
-        console.log(this.createData);
+        store.dispatch(setName(this.createData.name));
     }
 }
