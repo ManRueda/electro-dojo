@@ -37,7 +37,6 @@
     "app/redux/actions/dojoCreators.ts",
     "app/redux/actions/kataCreators.ts",
     "app/redux/actions/types.ts",
-    "app/redux/dada.ts",
     "app/redux/dojoReducer.ts",
     "app/redux/kataReducer.ts",
     "app/redux/store.ts",
