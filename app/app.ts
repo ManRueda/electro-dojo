@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
     constructor(public router: Router) {
         this.unsubscribe = store.subscribe(() => {
             let state = store.getState();
-            if (state.dojo.name){
+            if (state.dojo.name) {
                 window.document.title = 'Node Dojo - ' + state.dojo.name;
             }
         });

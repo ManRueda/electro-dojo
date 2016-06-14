@@ -28,5 +28,6 @@ export class HomeCreateComponen {
 
     create() {
         store.dispatch(setName(this.createData.name));
+        this.router.navigate(['/main']);
     }
 }

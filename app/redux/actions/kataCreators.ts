@@ -24,6 +24,7 @@ export interface ISetCodeKataAction extends IAction {
 export function addKata(name: string): IAddKataAction {
     return {
         type: KataActionType.ADD,
+        id: Date.now(),
         name
     };
 }
