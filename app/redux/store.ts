@@ -14,8 +14,8 @@ export interface IDojoStore {
     dojo: IDojo,
     katas: Array<IKata>
 }
-let enhancer:any;
-if (isDevelopment){
+let enhancer: any;
+if (isDevelopment) {
     enhancer = <any>compose(devTools({
         name: 'Electro Dojo', realtime: true,
         hostname: 'localhost', port: 6868,
