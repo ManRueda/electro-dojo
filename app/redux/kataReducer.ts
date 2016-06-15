@@ -5,7 +5,7 @@ export interface IKata {
     name: string;
     note?: string;
     code?: IKataCode;
-    id: string;
+    id: number;
 }
 
 export interface IKataCode {
@@ -19,7 +19,7 @@ export function kataReducer(state = initialState, action: IAction): Array<IKata>
         case KataActionType.ADD:
             return [...state, {
                 name: (<IAddKataAction>action).name,
-                id: ''
+                id: (<IAddKataAction>action).id
             }];
         case KataActionType.ADD_CODE:
             return state.map((kata, index) => {

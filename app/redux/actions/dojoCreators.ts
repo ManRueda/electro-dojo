@@ -1,4 +1,5 @@
 import { DojoActionType, IAction } from './types';
+import { IKata } from './../kataReducer';
 
 /*
     Interfaces with custom actions formats
@@ -8,6 +9,9 @@ export interface ISetIdDojoAction extends IAction {
 }
 export interface ISetNameDojoAction extends IAction {
     name: string;
+}
+export interface ISetCurrentKataAction extends IAction {
+    kata: IKata;
 }
 
 /*
@@ -27,5 +31,13 @@ export function setName(name: string): ISetNameDojoAction {
     return {
         type: DojoActionType.SET_NAME,
         name
+    };
+}
+
+// set the current kata
+export function setCurrentKata(kata: IKata): ISetCurrentKataAction {
+    return {
+        type: DojoActionType.SET_CURRENT,
+        kata
     };
 }

@@ -5,14 +5,15 @@ import { KataActionType, IAction } from './types';
 */
 export interface IAddKataAction extends IAction {
     name: string;
+    id: number;
 }
 export interface IAddCodeKataAction extends IAction {
-    id: string;
+    id: number;
     code: string;
     language: string;
 }
 export interface ISetCodeKataAction extends IAction {
-    id: string;
+    id: number;
     code: string;
 }
 
@@ -30,7 +31,7 @@ export function addKata(name: string): IAddKataAction {
 }
 
 // add code to the kata
-export function addCode(id: string, code: string, language: string): IAddCodeKataAction {
+export function addCode(id: number, code: string, language: string): IAddCodeKataAction {
     return {
         type: KataActionType.ADD_CODE,
         code,
@@ -40,7 +41,7 @@ export function addCode(id: string, code: string, language: string): IAddCodeKat
 }
 
 // set the code content to the kata
-export function setCode(id: string, code: string): ISetCodeKataAction {
+export function setCode(id: number, code: string): ISetCodeKataAction {
     return {
         type: KataActionType.SET_CODE,
         code,

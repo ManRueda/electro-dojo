@@ -1,12 +1,13 @@
-export enum KataActionType {
-    ADD,
-    ADD_CODE,
-    SET_CODE
+export class KataActionType {
+    public static ADD = "KATA_ADD";
+    public static ADD_CODE = "KATA_ADD_CODE";
+    public static SET_CODE = "KATA_SET_CODE";
 }
 
-export enum DojoActionType {
-    SET_ID,
-    SET_NAME
+export class DojoActionType {
+    public static SET_ID = "DOJO_SET_ID";
+    public static SET_NAME = "DOJO_SET_NAME";
+    public static SET_CURRENT = "DOJO_SET_CURRENT";
 }
 
 export interface IAction {
