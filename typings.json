@@ -6,6 +6,7 @@
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
     "node": "registry:dt/node#6.0.0+20160602155235",
     "peerjs": "registry:dt/peerjs#0.0.0+20160317120654",
+    "remote-redux-devtools": "registry:dt/remote-redux-devtools#0.3.2+20160521151832",
     "webrtc/mediastream": "registry:dt/webrtc/mediastream#0.0.0+20160317120654",
     "webrtc/rtcpeerconnection": "registry:dt/webrtc/rtcpeerconnection#0.0.0+20160316155526"
   }

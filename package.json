@@ -5,7 +5,7 @@
   "scripts": {
     "postinstall": "install-app-deps && typings install",
     "all": "npm install && npm run compile && electron ./app/out/boot.js",
-    "start": "npm run watchLess & electron ./app/out/boot.js",
+    "start": "npm run watchLess & npm run remotedev & electron ./app/out/boot.js",
     "clean": "rimraf dist",
     "clean:osx": "rimraf dist/electro-dojo-darwin-x64",
     "clean:win": "rimraf dist/win",
@@ -15,7 +15,8 @@
     "release": "npm run compile && build",
     "dist:win64": "./node_modules/.bin/build --platform win32 --arch x64",
     "less": "./tools/compile-less.sh",
-    "watchLess": "nodemon --watch app/styles -e less -x \"npm run less\""
+    "watchLess": "nodemon --watch app/styles -e less -x \"npm run less\"",
+    "remotedev": "remotedev --hostname=localhost --port=6868"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "electron-reload": "^1.0.0",
     "less": "^2.7.1",
     "nodemon": "^1.9.2",
+    "remotedev-server": "^0.1.2",
     "rimraf": "^2.5.2",
     "tsconfig-glob": "^0.4.3",
     "typescript": "^1.8.10",

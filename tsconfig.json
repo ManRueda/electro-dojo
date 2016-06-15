@@ -24,6 +24,7 @@
     "typings/globals/peerjs/index.d.ts",
     "typings/globals/webrtc/mediastream/index.d.ts",
     "typings/globals/webrtc/rtcpeerconnection/index.d.ts",
+    "typings/globals/remote-redux-devtools/index.d.ts"
     "app/app.ts",
     "app/boot.ts",
     "app/components/btn-home.cmp.ts",
