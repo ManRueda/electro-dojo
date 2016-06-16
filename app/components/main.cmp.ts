@@ -4,8 +4,8 @@ import { ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Routes } from '@angular/router';
 import { Unsubscribe } from 'redux';
 
 import { store, IDojoStore } from '../redux/store';
-import { IKata } from '../redux/kataReducer';
-import { addKata } from '../redux/actions/kataCreators';
+import { IKata, IKataCode } from '../redux/kataReducer';
+import { addKata, addCode } from '../redux/actions/kataCreators';
 import { KatasMenu } from './katasMenu.cmp';
 import { CodeEditorComponent } from './codeEditor.cmp';
 
@@ -24,11 +24,20 @@ export class MainComponent implements OnDestroy {
         // initial state load
         this.state = store.getState();
 
-        this.unsubscribe = store.subscribe(() => this.state = store.getState());
+        this.unsubscribe = store.subscribe(() => {
+            this.state = store.getState();
+            if (this.state.dojo.current) {
+                this.state.dojo.current.code = this.state.dojo.current.code || <IKataCode>{};
+            }
+        });
     }
 
     addKata() {
         store.dispatch(addKata(Date.now().toString()));
+    }
+
+    codeChange(code: string) {
+        store.dispatch(addCode(this.state.dojo.current.id, code, ''));
     }
 
     ngOnDestroy() {
