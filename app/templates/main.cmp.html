@@ -3,7 +3,7 @@
   <div class="content">
       <div *ngIf="!!state.dojo.current">
         <h1>{{state.dojo.current.name}}</h1>
-        <code-editor (codeChange)="codeChange($event)" [code]="state.dojo.current.code.code"></code-editor>
+        <code-editor (codeChange)="codeChange($event)" [(code)]="state.dojo.current.code.code"></code-editor>
       </div>
       <div class="notes">
         <button (click)="addKata()" >Add kata</button>

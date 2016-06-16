@@ -33,6 +33,10 @@ export class MainComponent implements OnDestroy {
     }
 
     addKata() {
+        if (this.state.dojo.current){
+            this.state.dojo.current.code = this.state.dojo.current.code || { code: '', language: '' };
+            this.state.dojo.current.code.code = this.state.dojo.current.code.code + ' adsasd sa';
+        }
         store.dispatch(addKata(Date.now().toString()));
     }
 

@@ -1,5 +1,5 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { Component, OnInit, Directive, Inject, ElementRef, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Directive, Inject, ElementRef, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 const ace = <Ace.Ace>(<any>window).ace;
 
@@ -8,8 +8,9 @@ const ace = <Ace.Ace>(<any>window).ace;
     templateUrl: 'templates/codeEditor.cmp.html',
     styleUrls: ['styles/codeEditor.cmp.css']
 })
-export class CodeEditorComponent implements OnInit {
+export class CodeEditorComponent implements OnInit, OnChanges {
     private editor: Ace.Editor;
+    private onChanging: boolean;
 
     @Input()
     code: string;
@@ -36,13 +37,27 @@ export class CodeEditorComponent implements OnInit {
         this.attachEditorEvents();
     }
 
+    ngOnChanges() {
+        if (this.editor && this.editor.getValue() !== this.code) {
+            this.onChanging = true;
+            this.editor.setValue(this.code || '');
+        }
+    }
+
     private attachEditorEvents() {
-        const that = this;
-        this.editor.on('change', () => that.onCodeChange());
+        this.editor.on('change', this.callback(this.onCodeChange));
     }
 
     private onCodeChange() {
+        if (this.onChanging) {
+            return this.onChanging = false;
+        }
         this.code = this.editor.getValue();
         this.codeChange.emit(this.code);
+    }
+
+    private callback(fn: Function): Function {
+        const that = this;
+        return () => fn.apply(that);
     }
 }
