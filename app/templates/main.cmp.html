@@ -1,12 +1,20 @@
 <div *ngIf="state && state.katas && state.dojo">
   <katas-menu [katas]="state.katas"></katas-menu>
-  <div class="content">
-      <div *ngIf="!!state.dojo.current">
+  <div class="actions">
+    <button (click)="addKata()" >Add kata</button>
+  </div>
+  <div class="content" *ngIf="!!state.dojo.current">
+      <div>
         <h1>{{state.dojo.current.name}}</h1>
         <code-editor (codeChange)="codeChange($event)" [(code)]="state.dojo.current.code.code"></code-editor>
       </div>
       <div class="notes">
-        <button (click)="addKata()" >Add kata</button>
+        <h3>Notes</h3>
+        <!--  With this create a fake text area  -->
+        <div class="textarea-scroller">
+          <div contenteditable="true" class="textarea">
+          </div>
+        </div>
       </div>
       <div class="dummy-notes">
       </div>
