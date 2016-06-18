@@ -37,7 +37,6 @@
     "app/components/home.menu.cmp.ts",
     "app/components/katasMenu.cmp.ts",
     "app/components/main.cmp.ts",
-    "app/components/text-area.component.ts",
     "app/redux/actions/dojoCreators.ts",
     "app/redux/actions/kataCreators.ts",
     "app/redux/actions/types.ts",

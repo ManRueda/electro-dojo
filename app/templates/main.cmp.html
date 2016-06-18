@@ -1,7 +1,7 @@
 <div *ngIf="state && state.katas && state.dojo">
-  <katas-menu [katas]="state.katas"></katas-menu>
-  <div class="actions">
-    <button (click)="addKata()" >Add kata</button>
+  <katas-menu [katas]="state.katas" class="noselect"></katas-menu>
+  <div class="actions noselect">
+    <i class="material-icons" (click)="addKata()">add</i>
   </div>
   <div class="content" *ngIf="!!state.dojo.current">
       <div>
@@ -11,8 +11,8 @@
       <div class="notes">
         <h3>Notes</h3>
         <!--  With this create a fake text area  -->
-        <div class="textarea-scroller">
-          <div contenteditable="true" class="textarea">
+        <div class="textarea-scroller" >
+          <div contenteditable="true" class="textarea" [(divModel)]="state.dojo.current.notes">
           </div>
         </div>
       </div>
