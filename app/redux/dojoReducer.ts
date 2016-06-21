@@ -1,11 +1,12 @@
 import { DojoActionType, IAction } from './actions/types';
-import { ISetIdDojoAction, ISetNameDojoAction, ISetCurrentKataAction } from './actions/dojoCreators';
+import { ISetIdDojoAction, ISetNameDojoAction, ISetCurrentKataAction, ISetCurrentKataIdAction } from './actions/dojoCreators';
 import { IKata } from './kataReducer';
 
 export interface IDojo {
     id: string;
     name: string;
     current?: IKata;
+    currentId?: number;
 }
 const initialState = <IDojo>{
     id: '',
@@ -25,6 +26,10 @@ export function dojoReducer(state = initialState, action: IAction): IDojo {
         case DojoActionType.SET_CURRENT:
             return Object.assign({}, state, {
                 current: (<ISetCurrentKataAction>action).kata
+            });
+        case DojoActionType.SET_CURRENT_ID:
+            return Object.assign({}, state, {
+                currentId: (<ISetCurrentKataIdAction>action).id
             });
         default:
             return state;

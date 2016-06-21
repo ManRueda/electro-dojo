@@ -19,7 +19,8 @@ export function kataReducer(state = initialState, action: IAction): Array<IKata>
         case KataActionType.ADD:
             return [...state, {
                 name: (<IAddKataAction>action).name,
-                id: (<IAddKataAction>action).id
+                id: (<IAddKataAction>action).id,
+                code: (<IAddKataAction>action).code
             }];
         case KataActionType.ADD_CODE:
             return state.map((kata, index) => {
