@@ -45,6 +45,7 @@
     "app/redux/store.ts",
     "app/renderer.ts",
     "app/app.tsx",
+    "app/components/action-input.tsx",
     "app/components/code-editor.tsx",
     "app/components/global-setter.tsx",
     "app/components/home-button.tsx",

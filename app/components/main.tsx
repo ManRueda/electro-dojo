@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { CodeEditor } from './code-editor';
 import { KatasMenu } from './katas-menu';
+import { ActionInput } from './action-input';
 
 import { addKata, setCode } from '../redux/actions/kataCreators';
 import { setCurrentKata, setCurrentKataId } from '../redux/actions/dojoCreators';
@@ -27,17 +28,16 @@ export interface IMainDispatchProps {
     setCode: (id: number, code: string) => void;
 }
 export interface IMainProps extends React.Props<any>, IMainStateProps, IMainDispatchProps {
-
 }
 
-class MainPresent extends React.Component<IMainProps, {}> {
+class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> {
     element: HTMLElement;
     render() {
         let currentKata = this.props.katas.filter(k => k.id === this.props.currentKataId)[0];
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
             <KatasMenu items={this.props.katas} onChange={this.onCurrentKataChange.bind(this) }/>
             <div className="actions noselect">
-                <i className="material-icons" onClick={this.onAddClick.bind(this) }>add</i>
+                <ActionInput icon="add" onClose={this.onAddClose.bind(this) } />
             </div>
             <div className="content" >
                 <div>
@@ -47,9 +47,13 @@ class MainPresent extends React.Component<IMainProps, {}> {
                 <div className="notes">
                     <h3>Notes</h3>
                     <div className="textarea-scroller" >
-                        <div contentEditable="true" className="textarea">
-                            {currentKata ? currentKata.note : ''}
-                        </div>
+                        {(() => {
+                          if (currentKata){
+                            return <div contentEditable="true" className="textarea">
+                                {currentKata.note}
+                            </div>;
+                          }
+                        })()}
                     </div>
                 </div>
                 <div className="dummy-notes">
@@ -58,8 +62,8 @@ class MainPresent extends React.Component<IMainProps, {}> {
         </div>;
     }
 
-    onAddClick() {
-        this.props.addKata(Date.now().toString());
+    onAddClose(value: string) {
+        this.props.addKata(value);
     }
 
     onCurrentKataChange(kata: IKata) {

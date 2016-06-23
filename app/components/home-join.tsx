@@ -28,8 +28,8 @@ class HomeJoinPresent extends React.Component<IHomeJoinProps, {}> {
             <HomeButton/>
             <div className="container join" onKeyPress={this.onKeyPress}>
                 <div>
-                    <input type="text" placeholder="Dojo ID..." ref={(c) => this.idInput = c}/>
-                    <input type="text" placeholder="Your name..." ref={(c) => this.nameInput = c}/>
+                    <input type="text" className="ed-input" placeholder="Dojo ID..." ref={(c) => this.idInput = c}/>
+                    <input type="text" className="ed-input" placeholder="Your name..." ref={(c) => this.nameInput = c}/>
                 </div>
                 <span className="btn action" onClick={this.joinAction.bind(this) }>Join</span>
             </div>

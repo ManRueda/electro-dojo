@@ -31,9 +31,9 @@ class HomeCreatePresent extends React.Component<IHomeCreateProps, {}> {
     render() {
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
             <HomeButton/>
-            <div className="container create" onKeyPress={this.onKeyPress}>
+            <div className="container create" onKeyDown={this.onKeyDown.bind(this) }>
                 <div>
-                    <input type="text" placeholder="Dojo name..." ref={(c) => this.nameInput = c}/>
+                    <input type="text" className="ed-input" placeholder="Dojo name..." ref={(c) => this.nameInput = c}/>
                 </div>
                 <span className="btn action" onClick={this.createAction.bind(this) }>Create</span>
             </div>
@@ -44,7 +44,7 @@ class HomeCreatePresent extends React.Component<IHomeCreateProps, {}> {
         this.props.setName(this.nameInput.value);
         (this.context as any).router.push('/main')
     }
-    onKeyPress(e: KeyboardEvent) {
+    onKeyDown(e: KeyboardEvent) {
         if (e.keyCode === 13) {
             this.createAction();
         }

@@ -55,6 +55,36 @@
         }
     }
 }
+input.ed-input {
+    padding: 5px;
+    height: 25px;
+    font-size: 1.1rem;
+    background: #404754;
+    border: 2px solid #1f2228;
+    color: #9da5b4;
+    width: 100%;
+    margin-left: -5px;
+    box-shadow: 0 0 1px #16191D;
+    margin-bottom: 15px;
+}
+.ed-button {
+    position: relative;
+    color: #9da5b4;
+    top: 0;
+    bottom: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    background-color: #1F2228;
+    border-radius: 5px;
+    padding: 2px 15px;
+    height: 2.2rem;
+    &:hover {
+        background-color: #00897B;
+        color: #263238;
+    }
+}
 .HomeCreate,
 .HomeJoin {
     .HomeButton {
@@ -67,18 +97,7 @@
         div {
             position: relative;
         }
-        input {
-            padding: 5px;
-            height: 25px;
-            font-size: 1.1rem;
-            background: #404754;
-            border: 2px solid #1f2228;
-            color: #9da5b4;
-            width: 100%;
-            margin-left: -5px;
-            box-shadow: 0 0 1px #16191D;
-            margin-bottom: 15px;
-        }
+        input {}
         .btn.action {
             position: relative;
             float: right;
@@ -231,5 +250,32 @@
                 background-color: #353942;
             }
         }
+    }
+}
+.ReactModalPortal {
+    .ReactModal__Overlay {
+        .ReactModal__Content {
+            span {
+                margin-bottom: 15px;
+                display: block;
+            }
+            input {
+                display: block;
+            }
+            button {
+                float: right;
+            }
+        }
+    }
+}
+.ActionInput {
+    input {
+        width: 91%;
+        background: #404754;
+        border: 2px solid #1f2228;
+        color: #9da5b4;
+        font-size: 0.8rem;
+        margin-left: 5px;
+        padding: 2px 4px;
     }
 }

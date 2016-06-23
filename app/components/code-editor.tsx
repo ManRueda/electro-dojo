@@ -52,6 +52,7 @@ export class CodeEditor extends React.Component<ICodeEditorProps, ICodeEditorSta
 
     private createEditor() {
         this.editor = ace.edit(this.editorDOM);
+        (this.editor as any).$blockScrolling = Infinity
         this.editor.setTheme('ace/theme/' + (this.props.theme || 'monokai'));
         this.editor.session.setMode('ace/mode/' + (this.props.language || 'javascript'));
         this.setEditorValue(this.props.code || '')
