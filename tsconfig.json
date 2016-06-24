@@ -53,7 +53,8 @@
     "app/components/home-join.tsx",
     "app/components/home.tsx",
     "app/components/katas-menu.tsx",
-    "app/components/main.tsx"
+    "app/components/main.tsx",
+    "app/components/settings.tsx"
   ],
   "buildOnSave": false,
   "compileOnSave": true,

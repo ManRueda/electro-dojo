@@ -19,6 +19,10 @@ export class Home extends React.Component<{}, {}> {
                     <span className="btn join" >Join room</span>
                 </Link>
             </div>
+            <Link to="/settings">
+                <i className="material-icons setings">settings</i>
+            </Link>
         </div>;
     }
+
 }

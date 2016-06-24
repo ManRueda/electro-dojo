@@ -10,6 +10,7 @@ import { HomeCreate } from './components/home-create';
 import { HomeJoin } from './components/home-join';
 import { GlobalSetter } from './components/global-setter';
 import { Main } from './components/main';
+import { Settings } from './components/settings';
 
 class App extends React.Component<{}, {}>{
     render() {
@@ -30,6 +31,7 @@ ReactDOM.render(
                     <Route path="create" component={HomeCreate}/>
                     <Route path="join" component={HomeJoin}/>
                     <Route path="main" component={Main}/>
+                    <Route path="settings" component={Settings}/>
                 </Route>
             </Router>
         </App>
