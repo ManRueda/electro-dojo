@@ -10,6 +10,7 @@ const COMPONENT_CLASS_NAME = "KatasMenu";
 export interface IKatasMenuProps {
     items: Array<IKata>;
     onChange?: (kata: IKata) => void;
+    activeId?: number;
 }
 
 export class KatasMenu extends React.Component<IKatasMenuProps, {}> {
@@ -18,15 +19,18 @@ export class KatasMenu extends React.Component<IKatasMenuProps, {}> {
         let items = this.props.items || [];
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
             <ul className="kata-list">
-                {items.map((kata, index) =>
-                    <li
-                        className={cn('kata', index % 2 === 0 ? 'even' : 'odd') }
+                {items.map((kata, index) => {
+                    let classes = ['kata'];
+                    if (kata.id === this.props.activeId) classes.push('active');
+                    classes.push(index % 2 === 0 ? 'even' : 'odd');
+                    return <li
+                        className={cn(classes) }
                         key={kata.id}
                         onClick={_ => this.onKataClick(kata) }
                         >
                         <span data-id={kata.id}>{kata.name}</span>
                     </li>
-                ) }
+                }) }
             </ul>
         </div>;
     }

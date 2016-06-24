@@ -22,6 +22,9 @@ export interface ISettingsProps extends React.Props<any>, ISettingsStateProps, I
 }
 
 class SettingsPresent extends React.Component<ISettingsProps, { modalIsOpen: boolean }> {
+    static contextTypes: React.ValidationMap<any> = {
+        router: React.PropTypes.object.isRequired
+    }
     element: HTMLElement;
     render() {
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
@@ -42,6 +45,7 @@ class SettingsPresent extends React.Component<ISettingsProps, { modalIsOpen: boo
                         console.error(err);
                     } else {
                         this.props.hydrateState(JSON.parse(data));
+                        (this.context as any).router.push('/main');
                         console.info('State loaded')
                     }
                 });

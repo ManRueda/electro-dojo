@@ -34,8 +34,9 @@ class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> 
     element: HTMLElement;
     render() {
         let currentKata = this.props.katas.filter(k => k.id === this.props.currentKataId)[0];
+        let currentKataId = currentKata ? currentKata.id : undefined;
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
-            <KatasMenu items={this.props.katas} onChange={this.onCurrentKataChange.bind(this) }/>
+            <KatasMenu items={this.props.katas} onChange={this.onCurrentKataChange.bind(this) } activeId={currentKataId}/>
             <div className="actions noselect">
                 <ActionInput icon="add" onClose={this.onAddClose.bind(this) } />
             </div>

@@ -1,3 +1,8 @@
+@font-color: #9da5b4;
+@font-color-alt: #00897B;
+@font-color-dark: #263238;
+@back-black: #1F2228;
+@dark-shadow: #16191D;
 .App {
     i.setings {
         position: absolute;
@@ -5,24 +10,24 @@
         bottom: 0;
         right: 0;
         cursor: pointer;
-        color: #9da5b4;
+        color: @font-color;
         z-index: 9999;
         &:hover {
-            color: #00897B;
+            color: @font-color-alt;
         }
     }
 }
 .HomeButton {
     a {
         text-decoration: none;
-        color: #9da5b4;
+        color: @font-color;
     }
     i {
         padding: 5px;
         cursor: pointer;
     }
     i:hover {
-        color: #00897B;
+        color: @font-color-alt;
     }
 }
 .Home,
@@ -30,7 +35,7 @@
 .HomeJoin {
     .container {
         border-radius: 5px;
-        box-shadow: 0 0 10px #16191D;
+        box-shadow: 0 0 10px @dark-shadow;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -44,10 +49,10 @@
         font-size: 1.6rem;
         text-align: center;
         cursor: pointer;
-        background-color: #1F2228;
+        background-color: @back-black;
         &:hover {
-            background-color: #00897B;
-            color: #263238;
+            background-color: @font-color-alt;
+            color: @font-color-dark;
         }
     }
 }
@@ -74,29 +79,29 @@ input.ed-input {
     height: 25px;
     font-size: 1.1rem;
     background: #404754;
-    border: 2px solid #1f2228;
-    color: #9da5b4;
+    border: 2px solid @back-black;
+    color: @font-color;
     width: 100%;
     margin-left: -5px;
-    box-shadow: 0 0 1px #16191D;
+    box-shadow: 0 0 1px @dark-shadow;
     margin-bottom: 15px;
 }
 .ed-button {
     position: relative;
-    color: #9da5b4;
+    color: @font-color;
     top: 0;
     bottom: 0;
     font-size: 1.2rem;
     text-align: center;
     cursor: pointer;
     border: 0;
-    background-color: #1F2228;
+    background-color: @back-black;
     border-radius: 5px;
     padding: 2px 15px;
     height: 2.2rem;
     &:hover {
-        background-color: #00897B;
-        color: #263238;
+        background-color: @font-color-alt;
+        color: @font-color-dark;
     }
 }
 .HomeCreate,
@@ -122,7 +127,7 @@ input.ed-input {
             margin-right: -8px;
             border-radius: 5px;
             font-size: 1.4rem;
-            box-shadow: 0 0 3px #16191D;
+            box-shadow: 0 0 3px @dark-shadow;
         }
     }
 }
@@ -131,6 +136,9 @@ input.ed-input {
         top: 0;
         bottom: 30px;
         height: unset;
+        li.active {
+            color: @font-color-alt;
+        }
     }
     div.actions {
         width: 200px;
@@ -138,14 +146,14 @@ input.ed-input {
         position: absolute;
         bottom: 1px;
         z-index: 11;
-        background-color: #1F2228;
-        box-shadow: 1px 10px 10px #16191D;
+        background-color: @back-black;
+        box-shadow: 1px 10px 10px @dark-shadow;
         padding-top: 10px;
         i {
             margin-top: 3px;
             cursor: pointer;
             &:hover {
-                color: #00897B;
+                color: @font-color-alt;
             }
         }
     }
@@ -163,8 +171,8 @@ input.ed-input {
             right: 0;
             left: 0;
             padding-left: 8px;
-            box-shadow: 0 1px 10px #16191D; //@common-shadows;
-            background-color: #1F2228; //@common-left-menu-black
+            box-shadow: 0 1px 10px @dark-shadow; //@common-shadows;
+            background-color: @back-black; //@common-left-menu-black
             z-index: 9;
             //TODO remove in the future
             button {
@@ -203,7 +211,7 @@ input.ed-input {
             height: 150px;
             left: 0;
             width: 8px;
-            background-color: #1F2228; //@common-left-menu-black;
+            background-color: @back-black; //@common-left-menu-black;
             z-index: 11;
         }
     }
@@ -213,8 +221,8 @@ input.ed-input {
     display: flex;
     height: 100%;
     width: 200px;
-    background-color: #1F2228; //@common-left-menu-black;
-    box-shadow: 1px 1px 10px #16191D; //@common-shadows;
+    background-color: @back-black; //@common-left-menu-black;
+    box-shadow: 1px 1px 10px @dark-shadow; //@common-shadows;
     z-index: 10;
     overflow: auto;
     .kata-list {
@@ -286,8 +294,8 @@ input.ed-input {
     input {
         width: 91%;
         background: #404754;
-        border: 2px solid #1f2228;
-        color: #9da5b4;
+        border: 2px solid @back-black;
+        color: @font-color;
         font-size: 0.8rem;
         margin-left: 5px;
         padding: 2px 4px;
