@@ -22,7 +22,7 @@ export interface IHomeCreateProps extends React.Props<any>, IHomeCreateStateProp
 
 
 class HomeCreatePresent extends React.Component<IHomeCreateProps, {}> {
-    static contextTypes = {
+    static contextTypes: React.ValidationMap<any> = {
         router: React.PropTypes.object.isRequired
     }
 
