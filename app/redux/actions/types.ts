@@ -2,6 +2,7 @@ export class KataActionType {
     public static ADD = "KATA_ADD";
     public static ADD_CODE = "KATA_ADD_CODE";
     public static SET_CODE = "KATA_SET_CODE";
+    public static SET_NOTES = "KATA_SET_NOTES";
 }
 
 export class DojoActionType {

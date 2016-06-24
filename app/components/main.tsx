@@ -7,7 +7,7 @@ import { CodeEditor } from './code-editor';
 import { KatasMenu } from './katas-menu';
 import { ActionInput } from './action-input';
 
-import { addKata, setCode } from '../redux/actions/kataCreators';
+import { addKata, setCode, setNotes } from '../redux/actions/kataCreators';
 import { setCurrentKata, setCurrentKataId } from '../redux/actions/dojoCreators';
 import { IKata, IDojoStore } from '../redux/models';
 
@@ -26,17 +26,18 @@ export interface IMainDispatchProps {
     setCurrentKata: (kata: IKata) => void;
     setCurrentKataId: (id: number) => void;
     setCode: (id: number, code: string) => void;
+    setNotes: (id: number, notes: string) => void;
 }
 export interface IMainProps extends React.Props<any>, IMainStateProps, IMainDispatchProps {
 }
 
 class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> {
     element: HTMLElement;
+    notes: HTMLElement;
     render() {
         let currentKata = this.props.katas.filter(k => k.id === this.props.currentKataId)[0];
-        let currentKataId = currentKata ? currentKata.id : undefined;
         return <div className={COMPONENT_CLASS_NAME} ref={(c) => this.element = c}>
-            <KatasMenu items={this.props.katas} onChange={this.onCurrentKataChange.bind(this) } activeId={currentKataId}/>
+            <KatasMenu items={this.props.katas} onChange={this.onCurrentKataChange.bind(this) } activeId={this.props.currentKataId}/>
             <div className="actions noselect">
                 <ActionInput icon="add" onClose={this.onAddClose.bind(this) } />
             </div>
@@ -47,11 +48,11 @@ class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> 
                 </div>
                 <div className="notes">
                     <h3>Notes</h3>
-                    <div className="textarea-scroller" >
+                    <div className="textarea-scroller" ref={(c) => this.notes = c} onInput={this.onNotesChange.bind(this) }>
                         {(() => {
                             if (currentKata) {
                                 return <div contentEditable="true" className="textarea">
-                                    {currentKata.note}
+                                    {currentKata.notes}
                                 </div>;
                             }
                         })() }
@@ -61,6 +62,10 @@ class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> 
                 </div>
             </div>
         </div>;
+    }
+
+    onNotesChange() {
+        this.props.setNotes(this.props.currentKataId, this.notes.textContent);
     }
 
     onAddClose(value: string) {
@@ -87,6 +92,7 @@ export var Main = connect<IMainStateProps, IMainDispatchProps, IMainProps>((stat
         addKata: (name: string) => dispatch(addKata(name)),
         setCurrentKata: (kata: IKata) => dispatch(setCurrentKata(kata)),
         setCode: (id: number, code: string) => dispatch(setCode(id, code)),
-        setCurrentKataId: (id: number) => dispatch(setCurrentKataId(id))
+        setCurrentKataId: (id: number) => dispatch(setCurrentKataId(id)),
+        setNotes: (id: number, notes: string) => dispatch(setNotes(id, notes))
     };
 })(MainPresent);

@@ -1,9 +1,9 @@
 import { KataActionType, IAction } from './actions/types';
-import { IAddKataAction, IAddCodeKataAction, ISetCodeKataAction, addKata, addCode, setCode } from './actions/kataCreators';
+import { IAddKataAction, IAddCodeKataAction, ISetCodeKataAction, ISetNotesKataAction, addKata, addCode, setCode, setNotes } from './actions/kataCreators';
 
 export interface IKata {
     name: string;
-    note?: string;
+    notes?: string;
     code?: IKataCode;
     id: number;
 }
@@ -42,6 +42,15 @@ export function kataReducer(state = initialState, action: IAction): Array<IKata>
                             code: (<ISetCodeKataAction>action).code,
                             language: kata.code.language
                         }
+                    });
+                }
+                return kata;
+            });
+        case KataActionType.SET_NOTES:
+            return state.map((kata, index) => {
+                if (kata.id === (<ISetNotesKataAction>action).id) {
+                    return Object.assign({}, kata, {
+                        notes: (<ISetNotesKataAction>action).notes
                     });
                 }
                 return kata;

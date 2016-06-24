@@ -20,6 +20,10 @@ export interface ISetCodeKataAction extends IAction {
     id: number;
     code: string;
 }
+export interface ISetNotesKataAction extends IAction {
+    id: number;
+    notes: string;
+}
 
 
 /*
@@ -53,6 +57,15 @@ export function setCode(id: number, code: string): ISetCodeKataAction {
     return {
         type: KataActionType.SET_CODE,
         code,
+        id
+    };
+}
+
+// set the notes content to the kata
+export function setNotes(id: number, notes: string): ISetNotesKataAction {
+    return {
+        type: KataActionType.SET_NOTES,
+        notes,
         id
     };
 }
