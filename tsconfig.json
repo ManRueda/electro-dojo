@@ -38,6 +38,7 @@
     "app/boot.ts",
     "app/redux/actions/dojoCreators.ts",
     "app/redux/actions/kataCreators.ts",
+    "app/redux/actions/storeCreators.ts",
     "app/redux/actions/types.ts",
     "app/redux/dojoReducer.ts",
     "app/redux/kataReducer.ts",

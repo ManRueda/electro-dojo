@@ -11,6 +11,10 @@ export class DojoActionType {
     public static SET_CURRENT_ID = "DOJO_SET_CURRENT_ID";
 }
 
+export class StoreActionType {
+    public static HYDRATE_STATE = "STORE_HYDRATE_STATE";
+}
+
 export interface IAction {
     type: any;
     [propName: string]: any;
