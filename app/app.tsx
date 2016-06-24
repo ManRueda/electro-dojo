@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Router, Route, hashHistory, IndexRedirect } from 'react-router'
+import { Router, Route, hashHistory, IndexRedirect, Link } from 'react-router'
 
 import { store } from './redux/store';
 import { Home } from './components/home';
@@ -14,7 +14,7 @@ import { Settings } from './components/settings';
 
 class App extends React.Component<{}, {}>{
     render() {
-        return <div>
+        return <div className="App">
             {this.props.children}
         </div>;
     }
@@ -34,6 +34,9 @@ ReactDOM.render(
                     <Route path="settings" component={Settings}/>
                 </Route>
             </Router>
+            <a href="#/settings">
+                <i className="material-icons setings">settings</i>
+            </a>
         </App>
     </Provider>,
     document.getElementById("content")
