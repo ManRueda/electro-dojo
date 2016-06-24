@@ -6,6 +6,10 @@ import { KataActionType, IAction } from './types';
 export interface IAddKataAction extends IAction {
     name: string;
     id: number;
+    code?: {
+        code: string;
+        language: string;
+    }
 }
 export interface IAddCodeKataAction extends IAction {
     id: number;
@@ -26,7 +30,11 @@ export function addKata(name: string): IAddKataAction {
     return {
         type: KataActionType.ADD,
         id: Date.now(),
-        name
+        name,
+        code: {
+            code: '',
+            language: ''
+        }
     };
 }
 

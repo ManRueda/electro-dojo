@@ -1,0 +1,295 @@
+.App {
+    i.setings {
+        position: absolute;
+        padding: 10px;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+        color: #9da5b4;
+        z-index: 9999;
+        &:hover {
+            color: #00897B;
+        }
+    }
+}
+.HomeButton {
+    a {
+        text-decoration: none;
+        color: #9da5b4;
+    }
+    i {
+        padding: 5px;
+        cursor: pointer;
+    }
+    i:hover {
+        color: #00897B;
+    }
+}
+.Home,
+.HomeCreate,
+.HomeJoin {
+    .container {
+        border-radius: 5px;
+        box-shadow: 0 0 10px #16191D;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 450px;
+        margin-left: -225px;
+    }
+    .btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        font-size: 1.6rem;
+        text-align: center;
+        cursor: pointer;
+        background-color: #1F2228;
+        &:hover {
+            background-color: #00897B;
+            color: #263238;
+        }
+    }
+}
+.Home {
+    .container {
+        margin-top: -50px;
+        height: 100px;
+        .btn.create {
+            left: 0;
+            right: 50%;
+            border-radius: 5px 0 0 5px;
+            line-height: 100px;
+        }
+        .btn.join {
+            line-height: 100px;
+            left: 50%;
+            right: 0;
+            border-radius: 0 5px 5px 0;
+        }
+    }
+}
+input.ed-input {
+    padding: 5px;
+    height: 25px;
+    font-size: 1.1rem;
+    background: #404754;
+    border: 2px solid #1f2228;
+    color: #9da5b4;
+    width: 100%;
+    margin-left: -5px;
+    box-shadow: 0 0 1px #16191D;
+    margin-bottom: 15px;
+}
+.ed-button {
+    position: relative;
+    color: #9da5b4;
+    top: 0;
+    bottom: 0;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    background-color: #1F2228;
+    border-radius: 5px;
+    padding: 2px 15px;
+    height: 2.2rem;
+    &:hover {
+        background-color: #00897B;
+        color: #263238;
+    }
+}
+.HomeCreate,
+.HomeJoin {
+    .HomeButton {
+        float: right;
+    }
+    .container {
+        box-shadow: none;
+        margin-top: -100px;
+        height: 200px;
+        div {
+            position: relative;
+        }
+        input {}
+        .btn.action {
+            position: relative;
+            float: right;
+            padding: 4px 35px;
+            top: 10px;
+            bottom: initial;
+            right: 0;
+            margin-right: -8px;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            box-shadow: 0 0 3px #16191D;
+        }
+    }
+}
+.Main {
+    .KatasMenu {
+        top: 0;
+        bottom: 30px;
+        height: unset;
+    }
+    div.actions {
+        width: 200px;
+        height: 30px;
+        position: absolute;
+        bottom: 1px;
+        z-index: 11;
+        background-color: #1F2228;
+        box-shadow: 1px 10px 10px #16191D;
+        padding-top: 10px;
+        i {
+            margin-top: 3px;
+            cursor: pointer;
+            &:hover {
+                color: #00897B;
+            }
+        }
+    }
+    .content {
+        position: absolute;
+        left: 200px;
+        right: 0;
+        padding: 2px 4px;
+        bottom: 0;
+        top: 0;
+        .notes {
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            right: 0;
+            left: 0;
+            padding-left: 8px;
+            box-shadow: 0 1px 10px #16191D; //@common-shadows;
+            background-color: #1F2228; //@common-left-menu-black
+            z-index: 9;
+            //TODO remove in the future
+            button {
+                position: absolute;
+                margin: 10px;
+                float: right;
+                right: 0;
+            }
+            & > h3 {
+                margin: 5px 0 0;
+            }
+            .textarea-scroller {
+                position: absolute;
+                top: 30px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: auto;
+                padding-left: 12px;
+                font-size: 0.8rem;
+                background-color: #282c34;
+            }
+            .textarea {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                outline: none;
+                padding-left: 12px;
+            }
+        }
+        .dummy-notes {
+            position: absolute;
+            bottom: 0;
+            height: 150px;
+            left: 0;
+            width: 8px;
+            background-color: #1F2228; //@common-left-menu-black;
+            z-index: 11;
+        }
+    }
+}
+.KatasMenu {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 200px;
+    background-color: #1F2228; //@common-left-menu-black;
+    box-shadow: 1px 1px 10px #16191D; //@common-shadows;
+    z-index: 10;
+    overflow: auto;
+    .kata-list {
+        padding: 0;
+        margin: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        position: absolute;
+        .kata {
+            list-style: none;
+            padding: 2px 12px;
+            font-size: 0.9rem;
+            line-height: 22px;
+            &:hover {
+                background-color: #31343C; //@common-back-hover;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.CodeEditor {
+    position: absolute;
+    bottom: 150px;
+    top: 75px;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    .editor {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        &.ace-monokai {
+            font-size: 1rem;
+            &,
+            .ace_gutter {
+                background-color: transparent;
+            }
+            .ace_marker-layer .ace_selection {
+                background-color: #353942;
+            }
+            .ace_gutter-active-line,
+            .ace_marker-layer .ace_active-line {
+                background-color: #353942;
+            }
+        }
+    }
+}
+.ReactModalPortal {
+    .ReactModal__Overlay {
+        .ReactModal__Content {
+            span {
+                margin-bottom: 15px;
+                display: block;
+            }
+            input {
+                display: block;
+            }
+            button {
+                float: right;
+            }
+        }
+    }
+}
+.ActionInput {
+    input {
+        width: 91%;
+        background: #404754;
+        border: 2px solid #1f2228;
+        color: #9da5b4;
+        font-size: 0.8rem;
+        margin-left: 5px;
+        padding: 2px 4px;
+    }
+}

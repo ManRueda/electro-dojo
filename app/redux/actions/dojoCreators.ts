@@ -13,6 +13,9 @@ export interface ISetNameDojoAction extends IAction {
 export interface ISetCurrentKataAction extends IAction {
     kata: IKata;
 }
+export interface ISetCurrentKataIdAction extends IAction {
+    id: number
+}
 
 /*
     Actions generators
@@ -39,5 +42,12 @@ export function setCurrentKata(kata: IKata): ISetCurrentKataAction {
     return {
         type: DojoActionType.SET_CURRENT,
         kata
+    };
+}
+
+export function setCurrentKataId(id: number): ISetCurrentKataIdAction {
+    return {
+        type: DojoActionType.SET_CURRENT_ID,
+        id
     };
 }

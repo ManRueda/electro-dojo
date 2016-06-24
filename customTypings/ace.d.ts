@@ -4,14 +4,15 @@ declare namespace Ace {
     }
 
     export interface Editor {
-        setTheme(theme: string);
+        setTheme(theme: string): void;
         session: EditorSession;
-        on(event: string, handler: Function);
+        on(event: string, handler: Function): void;
+        off(event: string, handler: Function): void;
         getValue(): string;
-        setValue(value: string, cursorPos?: number);
+        setValue(value: string, cursorPos?: number): void;
     }
 
     export interface EditorSession {
-        setMode(mode: string);
+        setMode(mode: string): void;
     }
 }

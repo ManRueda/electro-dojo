@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="styles/fonts/Roboto.css">
     <link rel="stylesheet" href="styles/fonts/material-icons.css">
     <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/components.css">
 
-    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+
     <script src="node_modules/ace-builds/src-noconflict/ace.js"></script>
     <!--<script src="node_modules/peerjs/dist/peer.js"></script>-->
 
   </head>
   <body>
-      <my-app>Loading...</my-app>
+      <div id="content"></div>
 
       <script>
         require('./out/app')
