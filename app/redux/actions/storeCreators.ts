@@ -13,7 +13,7 @@ export interface IHydrateStateAction extends IAction {
 */
 
 // set the id of the dojo
-export function HydrateState(state: IDojoStore): IHydrateStateAction {
+export function hydrateState(state: IDojoStore): IHydrateStateAction {
     return {
         type: StoreActionType.HYDRATE_STATE,
         state
