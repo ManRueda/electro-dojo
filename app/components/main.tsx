@@ -48,12 +48,12 @@ class MainPresent extends React.Component<IMainProps, { modalIsOpen: boolean }> 
                     <h3>Notes</h3>
                     <div className="textarea-scroller" >
                         {(() => {
-                          if (currentKata){
-                            return <div contentEditable="true" className="textarea">
-                                {currentKata.note}
-                            </div>;
-                          }
-                        })()}
+                            if (currentKata) {
+                                return <div contentEditable="true" className="textarea">
+                                    {currentKata.note}
+                                </div>;
+                            }
+                        })() }
                     </div>
                 </div>
                 <div className="dummy-notes">
